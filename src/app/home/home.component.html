@@ -1,0 +1,28 @@
+<div class="container">
+    <a class="btn btn-success btn-lg" (click)="getCategories()" role="button">Get Categories</a>
+    <!-- 2nd -->
+    <div class="row">
+        <div class="col-sm-4">
+            <div *ngIf='categry.length>0' class="jumbotron" style="margin-top: 30px">
+                <h2 style="text-align: center">Categories</h2>
+                <ul *ngFor="let e of categry;let i = index">
+                    {{i+1}}: <a role="button" (click)="getProducts(e)">{{e}}</a>
+
+                </ul>
+            </div>
+        </div>
+        <!-- 3 STRAT -->
+        <div *ngIf='prodtsAry.length>0' class="col-sm-8">
+            <div style="text-align: center;">
+                <a class="btn btn-success btn-info" role="button">{{productCtgyName}}</a>
+            </div>
+            <div *ngFor="let e of prodtsAry;let i=index">
+                <div class="card jumbotron">
+                    <div>
+                        {{i+1}} <a (click)="getProductDetailsById(e)">{{e.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

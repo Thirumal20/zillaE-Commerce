@@ -1,0 +1,25 @@
+<div style="text-align: center;margin-right: 28px;color: white;" class="circle">
+
+    <a style="text-align: justify;"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <span *ngIf='n != 0'>
+            {{n}}
+        </span>
+    </a>
+</div>
+<div class="container jumbotron">
+    <div class="row">
+        <div class="col-sm-4"><img [src]="idDetailsObj.image" alt="some Image"></div>
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Title</strong>:&nbsp;&nbsp;{{idDetailsObj.title}}</h5>
+                    <a href="#" class="card-link"><strong>Category</strong>:&nbsp;&nbsp;{{idDetailsObj.category}}</a>
+                    <p class="card-text"><strong>Description</strong>:&nbsp;&nbsp;{{idDetailsObj.description}}</p>
+                    <p class="card-text"><strong>Price</strong>: &nbsp;&nbsp;Rs.{{idDetailsObj.price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-success btn-lg" (click)="addTocart()" role="button">Add to Cart</a>
+
+</div>
